@@ -107,5 +107,8 @@ def download():
 
     return send_file(pdf_file, as_attachment=True)
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+if __name__ == '__main__':
+    if not os.path.exists("static"):
+        os.mkdir("static")
+    app.run(debug=True)
+
